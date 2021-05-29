@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="base_elevation">8dp</dimen>
+    <dimen name="base_advice_height">150dp</dimen>
+    <dimen name="base_advertisement_height">180dp</dimen>
+</resources>

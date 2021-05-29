@@ -2,7 +2,8 @@ package com.github.belyakovleonid.appmed.home.presentstion.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.github.belyakovleonid.appmed.base.presentation.adapter.emptyFallbackAD
-import com.github.belyakovleonid.appmed.home.presentstion.components.advices.adapter.doctorsNearbyAD
+import com.github.belyakovleonid.appmed.home.presentstion.components.advices.adapter.alertAdvicesAD
+import com.github.belyakovleonid.appmed.home.presentstion.components.advices.adapter.normalAdvicesAD
 import com.github.belyakovleonid.appmed.home.presentstion.components.search.adapter.searchAD
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import kotlin.jvm.internal.Intrinsics
@@ -15,7 +16,8 @@ class ProfileAdapter(
     init {
         delegatesManager
             .setFallbackDelegate(emptyFallbackAD())
-            .addDelegate(doctorsNearbyAD())
+            .addDelegate(normalAdvicesAD())
+            .addDelegate(alertAdvicesAD())
             .addDelegate(searchAD())
 //            .addDelegate(targetImageAD())
 //            .addDelegate(targetTextAD(onTextControlClick))

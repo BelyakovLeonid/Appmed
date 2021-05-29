@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AppMed</string>
+    <string name="doctors_nearby">Врачи\nрядом</string>
+    <string name="doctors_name">85% пациентов рекомендуют\nэтого врача рядом</string>
+    <string name="my_directions">Мои\nназначения</string>
+    <string name="meds_by_recipe">Препарат\nпо рецепту</string>
+    <string name="help_in_search">Помощь\nв подборе</string>
+    <string name="drugstore">Аптеки</string>
 </resources>
