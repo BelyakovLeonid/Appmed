@@ -1,8 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<HorizontalScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
-</LinearLayout>
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingTop="18dp"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/base_advertisement_height"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="@dimen/base_advertisement_width"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_ripple"
+            android:clickable="true"
+            android:elevation="@dimen/base_elevation"
+            android:padding="8dp">
+
+            <TextView
+                style="@style/HeaderText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_meds_by_recipe" />
+
+            <ImageView
+                android:layout_margin="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:src="@drawable/ic_attachment" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/HeaderText"
+            android:layout_width="@dimen/base_advertisement_width"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_ripple"
+            android:clickable="true"
+            android:elevation="@dimen/base_elevation"
+            android:padding="8dp"
+            android:text="@string/add_help_in_search" />
+
+        <TextView
+            style="@style/HeaderText"
+            android:layout_width="@dimen/base_advertisement_width"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_ripple"
+            android:clickable="true"
+            android:elevation="@dimen/base_elevation"
+            android:padding="8dp"
+            android:text="@string/add_drugstore" />
+
+        <TextView
+            style="@style/HeaderText"
+            android:layout_width="@dimen/base_advertisement_width"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_ripple"
+            android:clickable="true"
+            android:elevation="@dimen/base_elevation"
+            android:padding="8dp"
+            android:text="@string/add_smth_else" />
+    </LinearLayout>
+</HorizontalScrollView>
 

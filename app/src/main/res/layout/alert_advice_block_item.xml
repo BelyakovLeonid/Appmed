@@ -4,14 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/base_advice_height"
+    android:layout_height="wrap_content"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:orientation="horizontal"
-    android:paddingVertical="10dp">
+    android:minHeight="@dimen/base_advice_height"
+    android:orientation="horizontal">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/alert_item"
+        android:id="@+id/alertItem"
         android:layout_width="0px"
         android:layout_height="match_parent"
         android:layout_marginStart="4dp"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/alert_title"
+            android:id="@+id/alertTitle"
             style="@style/HeaderText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,30 +36,30 @@
             tools:ignore="RtlHardcoded" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_yes"
+            android:id="@+id/buttonYes"
             style="@style/MyButton"
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:text="@string/yes"
-            app:layout_constraintHorizontal_chainStyle="packed"
             android:layout_marginEnd="8dp"
+            android:text="@string/yes"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/button_no"
+            app:layout_constraintEnd_toStartOf="@id/buttonNo"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_no"
+            android:id="@+id/buttonNo"
             style="@style/MyButton"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:text="@string/no"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/button_yes" />
+            app:layout_constraintStart_toEndOf="@id/buttonYes" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/doctors_item"
+        android:id="@+id/doctorsItem"
         android:layout_width="0px"
         android:layout_height="match_parent"
         android:layout_marginStart="4dp"
@@ -74,7 +74,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/doctors_title"
+            android:id="@+id/doctorsTitle"
             style="@style/HeaderText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,16 +84,19 @@
             tools:ignore="RtlHardcoded" />
 
         <ImageView
-            android:id="@+id/doctor_image"
+            android:id="@+id/doctorImage"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginTop="4dp"
             android:src="@drawable/image_doctor"
-            app:layout_constraintBottom_toTopOf="@id/doctor_title"
+            app:layout_constraintBottom_toTopOf="@id/doctorTitle"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/doctorsTitle"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
-            android:id="@+id/doctor_title"
+            android:id="@+id/doctorTitle"
             style="@style/SubtitleText"
             android:layout_width="0px"
             android:layout_height="wrap_content"

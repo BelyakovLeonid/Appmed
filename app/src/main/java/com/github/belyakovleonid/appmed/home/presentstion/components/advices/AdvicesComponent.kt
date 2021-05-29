@@ -10,6 +10,6 @@ class AdvicesComponent @Inject constructor(
 ) : BaseComponent() {
 
     override suspend fun onInitialize() {
-        setContent(AlertAdvicesUiModel("GTys"))
+        setContent(AlertAdvicesUiModel("Аскорбинка", "Пеницилин"))
     }
 }

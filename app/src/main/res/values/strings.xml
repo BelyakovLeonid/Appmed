@@ -3,12 +3,17 @@
     <string name="doctors_nearby">Врачи\nрядом</string>
     <string name="doctors_name">85% пациентов рекомендуют\nэтого врача рядом</string>
     <string name="my_directions">Мои\nназначения</string>
-    <string name="meds_by_recipe">Препарат\nпо рецепту</string>
-    <string name="help_in_search">Помощь\nв подборе</string>
-    <string name="drugstore">Аптеки</string>
+
+    <string name="add_meds_by_recipe">Препарат\nпо рецепту</string>
+    <string name="add_help_in_search">Помощь\nв подборе</string>
+    <string name="add_drugstore">Аптеки</string>
+    <string name="add_smth_else">Что-то\nеще</string>
 
     <string name="alert_title">У меня аллергия на %1s</string>
     <string name="alert_drug_title">%1s содержит %2s</string>
     <string name="yes">Да</string>
     <string name="no">Нет</string>
+
+
+
 </resources>
