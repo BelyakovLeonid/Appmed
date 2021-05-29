@@ -1,47 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/base_advice_height"
-    android:elevation="@dimen/base_elevation"
-    android:paddingHorizontal="16dp"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="horizontal"
     android:paddingVertical="10dp">
 
-    <TextView
-        android:id="@+id/personal_item"
-        style="@style/HeaderText"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/alert_item"
         android:layout_width="0px"
-        android:layout_height="0px"
-        android:layout_marginEnd="4dp"
-        android:background="@drawable/button_ripple"
-        android:padding="8dp"
-        android:text="@string/my_directions"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/doctors_item"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <FrameLayout
-        android:id="@+id/doctors_item"
-        android:layout_width="0px"
-        android:layout_height="0px"
+        android:layout_height="match_parent"
         android:layout_marginStart="4dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_ripple"
+        android:clickable="true"
+        android:elevation="@dimen/base_elevation"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/personal_item"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/alert_title"
             style="@style/HeaderText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left|top"
-            android:layout_margin="8dp"
-            android:background="@drawable/button_ripple"
-            android:text="@string/doctors_nearby"
+            android:text="@string/alert_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="RtlHardcoded" />
-    </FrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_yes"
+            style="@style/MyButton"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:text="@string/yes"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_no"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_no"
+            style="@style/MyButton"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:text="@string/no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_yes" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/doctors_item"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_ripple"
+        android:clickable="true"
+        android:elevation="@dimen/base_elevation"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/personal_item"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/doctors_title"
+            style="@style/HeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_drug_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageView
+            android:id="@+id/doctor_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/image_doctor"
+            app:layout_constraintBottom_toTopOf="@id/doctor_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/doctor_title"
+            style="@style/SubtitleText"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:text="@string/doctors_name"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="RtlHardcoded" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,34 +7,32 @@
     android:layout_height="@dimen/base_advice_height"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:paddingHorizontal="16dp"
+    android:orientation="horizontal"
     android:paddingVertical="10dp">
 
     <TextView
         android:id="@+id/personal_item"
         style="@style/HeaderText"
         android:layout_width="0px"
-        android:layout_height="0px"
+        android:layout_height="match_parent"
         android:layout_marginEnd="4dp"
+        android:layout_weight="1"
         android:background="@drawable/button_ripple"
         android:clickable="true"
         android:elevation="@dimen/base_elevation"
         android:padding="8dp"
-        android:text="@string/my_directions"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/doctors_item"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/my_directions" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/doctors_item"
         android:layout_width="0px"
-        android:layout_height="0px"
+        android:layout_height="match_parent"
         android:layout_marginStart="4dp"
+        android:layout_weight="1"
         android:background="@drawable/button_ripple"
         android:clickable="true"
-        android:padding="8dp"
         android:elevation="@dimen/base_elevation"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/personal_item"
@@ -54,21 +52,21 @@
             android:id="@+id/doctor_image"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:src="@drawable/image_doctor"
             app:layout_constraintBottom_toTopOf="@id/doctor_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/image_doctor" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/doctor_title"
             style="@style/SubtitleText"
             android:layout_width="0px"
-            android:textAlignment="center"
             android:layout_height="wrap_content"
             android:text="@string/doctors_name"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="RtlHardcoded" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
