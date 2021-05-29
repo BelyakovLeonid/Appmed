@@ -1,6 +1,8 @@
 package com.github.belyakovleonid.appmed.home.data.remote
 
+import com.github.belyakovleonid.appmed.R
 import com.github.belyakovleonid.appmed.home.data.remote.model.ProductDto
+import java.util.Locale
 import javax.inject.Inject
 
 /**
@@ -8,37 +10,87 @@ import javax.inject.Inject
  */
 class ProductsApiMocked @Inject constructor() : ProductsApi {
 
-    override fun loadProductsByQuery(query: String) = when (query) {
+    override fun loadProductsByQuery(query: String) = when (query.lowercase(Locale.getDefault())) {
         HARDCODED_QUERY_1 -> {
             listOf(
                 ProductDto(
                     id = 1L,
-                    name = "Амоксиклав, таблетки 625мг, 14шт.",
-                    allergens = listOf("Пеницилин")
+                    name = "Амоксиклав",
+                    dose = "таблетки 875мг, 14шт.",
+                    allergens = listOf("Пеницилин"),
+                    description = "Таблетки, покрытые пленочной оболочкой",
+                    imageResId = R.drawable.img_aug_2,
+                    oldPrice = 190,
+                    newPrice = 155,
+                    isAvailable = true,
+                    isRecipe = true,
+                    defaultPortionMg = 500,
+                    defaultCountPerDay = 3,
+                    defaultCourseDays = 5,
                 ),
                 ProductDto(
-                    id = 1L,
-                    name = "Амоксиклав, суспензия, флакон 12,6г",
-                    allergens = listOf("Пеницилин")
+                    id = 2L,
+                    name = "Амоксиклав",
+                    dose = "порошок 125мг, 31мл.",
+                    allergens = listOf("Пеницилин"),
+                    description = "Порошок для приема внутрь",
+                    imageResId = R.drawable.img_aug_3,
+                    oldPrice = 290,
+                    newPrice = 185,
+                    isAvailable = false,
+                    isRecipe = true,
+                    defaultPortionMg = 500,
+                    defaultCountPerDay = 3,
+                    defaultCourseDays = 5,
                 ),
                 ProductDto(
-                    id = 1L,
-                    name = "Амоксиклав, таблетки 200мг, 24шт.",
-                    allergens = listOf("Пеницилин")
+                    id = 3L,
+                    name = "Амоксиклав",
+                    dose = "порошок 500мг, 14мл.",
+                    allergens = listOf("Пеницилин"),
+                    description = "Таблетки, покрытые пленочной оболочкой",
+                    imageResId = R.drawable.img_aug_1,
+                    oldPrice = 150,
+                    newPrice = 125,
+                    isAvailable = true,
+                    isRecipe = true,
+                    defaultPortionMg = 500,
+                    defaultCountPerDay = 3,
+                    defaultCourseDays = 5,
                 ),
             )
         }
         HARDCODED_QUERY_2 -> {
             listOf(
                 ProductDto(
-                    id = 1L,
-                    name = "Аскорбинка, таблетки 625мг, 14шт.",
-                    allergens = emptyList()
+                    id = 4L,
+                    name = "Аскорбиновая кислота с глюкозой",
+                    dose = "40шт.",
+                    allergens = emptyList(),
+                    description = "Полезно детям",
+                    imageResId = R.drawable.img_asc_1,
+                    oldPrice = 150,
+                    newPrice = 125,
+                    isAvailable = true,
+                    isRecipe = false,
+                    defaultPortionMg = 300,
+                    defaultCountPerDay = 2,
+                    defaultCourseDays = 15,
                 ),
                 ProductDto(
-                    id = 1L,
-                    name = "Аскорбинка, таблетки 35мг, 4шт.",
-                    allergens = emptyList()
+                    id = 5L,
+                    name = "Аскорбиновая кислота",
+                    dose = "40шт.",
+                    allergens = emptyList(),
+                    description = "Полезно детям",
+                    imageResId = R.drawable.img_asc_2,
+                    oldPrice = 150,
+                    newPrice = 125,
+                    isAvailable = false,
+                    isRecipe = false,
+                    defaultPortionMg = 300,
+                    defaultCountPerDay = 2,
+                    defaultCourseDays = 15,
                 ),
             )
         }
@@ -46,7 +98,7 @@ class ProductsApiMocked @Inject constructor() : ProductsApi {
     }
 
     companion object {
-        private const val HARDCODED_QUERY_1 = "Амоксиклав"
-        private const val HARDCODED_QUERY_2 = "Аскорбинка"
+        private const val HARDCODED_QUERY_1 = "aмоксиклав"
+        private const val HARDCODED_QUERY_2 = "aскорбинка"
     }
 }

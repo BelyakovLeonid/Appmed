@@ -7,6 +7,8 @@ import com.github.belyakovleonid.appmed.home.data.remote.ProductsApi
 import com.github.belyakovleonid.appmed.home.data.remote.ProductsApiMocked
 import com.github.belyakovleonid.appmed.home.domain.ProductsRepository
 import com.github.belyakovleonid.appmed.home.presentstion.HomeViewModel
+import com.github.belyakovleonid.appmed.home.presentstion.components.search.ISearchComponent
+import com.github.belyakovleonid.appmed.home.presentstion.components.search.SearchComponent
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -19,6 +21,9 @@ interface HomeModule {
 
     @Binds
     fun bindRepository(repo: ProductsRepositoryImpl): ProductsRepository
+
+    @Binds
+    fun bindSearchComponent(component: SearchComponent): ISearchComponent
 
     @Binds
     @IntoMap

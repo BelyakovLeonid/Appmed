@@ -1,4 +1,10 @@
 package com.github.belyakovleonid.appmed.home.presentstion.components.products.model
 
-class ProductUiModel {
-}
+data class ProductUiModel(
+  val name: String,
+  val description: String,
+  val isAvailable: Boolean,
+  val isRecipe: Boolean,
+  val oldPrice: Int,
+  val newPrice: Int,
+)

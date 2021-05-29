@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/imageMg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="25dp"
         android:src="@drawable/ic_meds"
         app:layout_constraintEnd_toStartOf="@id/imageAlert"
@@ -31,8 +31,8 @@
 
     <ImageView
         android:id="@+id/imageAlert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="25dp"
         android:src="@drawable/ic_alert"
         app:layout_constraintEnd_toStartOf="@id/imageDays"
@@ -52,8 +52,8 @@
 
     <ImageView
         android:id="@+id/imageDays"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="25dp"
         android:src="@drawable/ic_calendar"
         app:layout_constraintEnd_toEndOf="parent"

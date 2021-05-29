@@ -7,7 +7,7 @@
     android:layout_marginTop="14dp"
     android:background="@drawable/rounded_gray_bg"
     android:paddingHorizontal="16dp"
-    android:paddingVertical="6dp">
+    android:paddingVertical="8dp">
 
     <ImageView
         android:id="@+id/imageSearch"
@@ -27,6 +27,8 @@
         android:layout_marginHorizontal="8dp"
         android:background="@null"
         android:ellipsize="end"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
         android:maxLines="1"
         android:textCursorDrawable="@null"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -23,7 +23,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val binding by viewBinding(FragmentHomeBinding::bind)
 
     private val profileAdapter by lazy(LazyThreadSafetyMode.NONE) {
-        ProfileAdapter()
+        ProfileAdapter(
+            onSearchQuery = viewModel::onSearchQuery
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

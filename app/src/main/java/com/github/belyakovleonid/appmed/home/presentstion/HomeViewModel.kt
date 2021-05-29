@@ -6,6 +6,7 @@ import com.github.belyakovleonid.appmed.home.presentstion.components.advertismen
 import com.github.belyakovleonid.appmed.home.presentstion.components.advices.AdvicesComponent
 import com.github.belyakovleonid.appmed.home.presentstion.components.dosage.DosageComponent
 import com.github.belyakovleonid.appmed.home.presentstion.components.products.ProductsComponent
+import com.github.belyakovleonid.appmed.home.presentstion.components.search.ISearchComponent
 import com.github.belyakovleonid.appmed.home.presentstion.components.search.SearchComponent
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -24,7 +25,7 @@ class HomeViewModel @Inject constructor(
         dosageComponent,
         productsComponent
     )
-) {
+), ISearchComponent by searchComponent {
 
     init {
         viewModelScope.launch {
