@@ -9,17 +9,23 @@ import com.github.belyakovleonid.appmed.home.presentstion.components.dosage.Dosa
 import com.github.belyakovleonid.appmed.home.presentstion.components.products.ProductsComponent
 import com.github.belyakovleonid.appmed.home.presentstion.components.search.SearchComponent
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel(
-
+class HomeViewModel @Inject constructor(
+    advicesComponent: AdvicesComponent,
+    searchComponent: SearchComponent,
+    advertisementsComponent: AdvertisementsComponent,
+    chipComponent: ChipComponent,
+    dosageComponent: DosageComponent,
+    productsComponent: ProductsComponent,
 ) : BaseComponentViewModel(
     components = listOf(
-        AdvicesComponent(),
-        SearchComponent(),
-        AdvertisementsComponent(),
-        ChipComponent(),
-        DosageComponent(),
-        ProductsComponent()
+        advicesComponent,
+        searchComponent,
+        advertisementsComponent,
+        chipComponent,
+        dosageComponent,
+        productsComponent
     )
 ) {
 
