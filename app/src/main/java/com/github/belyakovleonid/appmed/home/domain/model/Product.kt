@@ -9,6 +9,7 @@ data class Product(
     val isRecipe: Boolean,
     val oldPrice: Int,
     val newPrice: Int,
+    val rate: Float,
     val defaultPortionMg: Int,
     val defaultCountPerDay: Int,
     val defaultCourseDays: Int,

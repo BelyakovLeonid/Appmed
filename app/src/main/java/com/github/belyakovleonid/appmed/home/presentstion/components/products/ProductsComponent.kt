@@ -16,12 +16,14 @@ class ProductsComponent @Inject constructor(
             .onEach { list ->
                 content.value = list?.map { products ->
                     ProductUiModel(
-                        name = products.name,
+                        title =  "${products.name}, ${products.dose}",
                         description = products.description,
+                        imageRes =products.imageResId,
                         isAvailable = products.isAvailable,
                         isRecipe = products.isRecipe,
                         oldPrice = products.oldPrice,
-                        newPrice = products.newPrice
+                        newPrice = products.newPrice,
+                        rate = products.rate
                     )
                 } ?: emptyList()
             }

@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="12dp"
     android:background="@drawable/button_ripple"
+    android:clickable="true"
     android:elevation="@dimen/base_elevation">
 
     <ImageView

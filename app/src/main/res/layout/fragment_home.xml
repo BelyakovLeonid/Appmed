@@ -7,5 +7,7 @@
     android:layout_height="match_parent"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:padding="16dp"
+    android:paddingBottom="@dimen/bottom_offset"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />

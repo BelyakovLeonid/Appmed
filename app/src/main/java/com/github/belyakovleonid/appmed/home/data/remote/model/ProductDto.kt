@@ -15,7 +15,8 @@ data class ProductDto(
     val defaultPortionMg: Int,
     val defaultCountPerDay: Int,
     val defaultCourseDays: Int,
-    val allergens: List<String>
+    val allergens: List<String>,
+    val rate: Float
 )
 
 fun ProductDto.toDomain(): Product {
@@ -29,6 +30,7 @@ fun ProductDto.toDomain(): Product {
         oldPrice = oldPrice,
         newPrice = newPrice,
         allergens = allergens,
+        rate = rate,
         defaultPortionMg = defaultPortionMg,
         defaultCountPerDay = defaultCountPerDay,
         defaultCourseDays = defaultCourseDays

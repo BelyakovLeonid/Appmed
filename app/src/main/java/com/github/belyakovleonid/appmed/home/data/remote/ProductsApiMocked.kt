@@ -15,6 +15,7 @@ class ProductsApiMocked @Inject constructor() : ProductsApi {
             listOf(
                 ProductDto(
                     id = 1L,
+                    rate = 4.56f,
                     name = "Амоксиклав",
                     dose = "таблетки 875мг, 14шт.",
                     allergens = listOf("Пеницилин"),
@@ -30,6 +31,7 @@ class ProductsApiMocked @Inject constructor() : ProductsApi {
                 ),
                 ProductDto(
                     id = 2L,
+                    rate = 4.88f,
                     name = "Амоксиклав",
                     dose = "порошок 125мг, 31мл.",
                     allergens = listOf("Пеницилин"),
@@ -45,6 +47,7 @@ class ProductsApiMocked @Inject constructor() : ProductsApi {
                 ),
                 ProductDto(
                     id = 3L,
+                    rate = 3.76f,
                     name = "Амоксиклав",
                     dose = "порошок 500мг, 14мл.",
                     allergens = listOf("Пеницилин"),
@@ -64,6 +67,7 @@ class ProductsApiMocked @Inject constructor() : ProductsApi {
             listOf(
                 ProductDto(
                     id = 4L,
+                    rate = 5f,
                     name = "Аскорбиновая кислота с глюкозой",
                     dose = "40шт.",
                     allergens = emptyList(),
@@ -79,6 +83,7 @@ class ProductsApiMocked @Inject constructor() : ProductsApi {
                 ),
                 ProductDto(
                     id = 5L,
+                    rate = 4f,
                     name = "Аскорбиновая кислота",
                     dose = "40шт.",
                     allergens = emptyList(),
@@ -98,7 +103,7 @@ class ProductsApiMocked @Inject constructor() : ProductsApi {
     }
 
     companion object {
-        private const val HARDCODED_QUERY_1 = "aмоксиклав"
-        private const val HARDCODED_QUERY_2 = "aскорбинка"
+        private const val HARDCODED_QUERY_1 = "амоксиклав"
+        private const val HARDCODED_QUERY_2 = "аскорбинка"
     }
 }
