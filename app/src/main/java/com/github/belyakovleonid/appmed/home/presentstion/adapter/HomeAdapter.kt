@@ -14,10 +14,9 @@ import com.github.belyakovleonid.appmed.home.presentstion.components.search.mode
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import kotlin.jvm.internal.Intrinsics
 
-class ProfileAdapter(
-    onSearchQuery: (String) -> Unit
-//    onButtonClick: () -> Unit,
-//    onRetryClick: () -> Unit,
+class HomeAdapter(
+    onSearchQuery: (String) -> Unit,
+    onDoseClick: () -> Unit
 ) : AsyncListDifferDelegationAdapter<Any>(DiffCallback) {
 
     init {
@@ -27,16 +26,8 @@ class ProfileAdapter(
             .addDelegate(alertAdvicesAD())
             .addDelegate(searchAD(onSearchQuery))
             .addDelegate(advertisementsAD())
-            .addDelegate(dosageAD())
+            .addDelegate(dosageAD(onDoseClick))
             .addDelegate(productAD())
-//            .addDelegate(targetImageAD())
-//            .addDelegate(targetTextAD(onTextControlClick))
-//            .addDelegate(targetDatesAD())
-//            .addDelegate(targetHintsAD())
-//            .addDelegate(targetStepsAD())
-//            .addDelegate(targetBrandAD(onBrandClick))
-//            .addDelegate(targetButtonAD(onButtonClick))
-//            .addDelegate(targetProgressBarAD())
     }
 
     private companion object DiffCallback : DiffUtil.ItemCallback<Any>() {

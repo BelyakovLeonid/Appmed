@@ -6,7 +6,11 @@
 
     <fragment
         android:id="@+id/tab_home"
-        android:name="com.github.belyakovleonid.appmed.home.presentstion.HomeFragment"/>
+        android:name="com.github.belyakovleonid.appmed.home.presentstion.HomeFragment">
+        <action
+            android:id="@+id/action_tab_home_to_doseFragment"
+            app:destination="@id/doseFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/tab_cart"
@@ -14,13 +18,17 @@
 
     <fragment
         android:id="@+id/tab_meds"
-        android:name="com.github.belyakovleonid.appmed.meds.presentstion.MedsFragment"/>
+        android:name="com.github.belyakovleonid.appmed.meds.presentstion.MedsFragment" />
 
     <fragment
         android:id="@+id/tab_favorite"
-        android:name="com.github.belyakovleonid.appmed.favorite.presentstion.FavoriteFragment"/>
+        android:name="com.github.belyakovleonid.appmed.favorite.presentstion.FavoriteFragment" />
 
     <fragment
         android:id="@+id/tab_profile"
         android:name="com.github.belyakovleonid.appmed.profile.presentstion.ProfileFragment" />
+    <fragment
+        android:id="@+id/doseFragment"
+        android:name="com.github.belyakovleonid.appmed.dose.presentation.DoseFragment"
+        android:label="DoseFragment" />
 </navigation>

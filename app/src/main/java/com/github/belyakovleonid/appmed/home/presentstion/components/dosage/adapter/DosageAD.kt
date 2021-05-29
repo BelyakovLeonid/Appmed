@@ -5,9 +5,15 @@ import com.github.belyakovleonid.appmed.databinding.DosageItemBinding
 import com.github.belyakovleonid.appmed.home.presentstion.components.dosage.model.DosageUiModel
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
-fun dosageAD() = adapterDelegateViewBinding<DosageUiModel, Any, DosageItemBinding>(
+fun dosageAD(
+    onDoseClick: () -> Unit
+) = adapterDelegateViewBinding<DosageUiModel, Any, DosageItemBinding>(
     { layoutInflater, root -> DosageItemBinding.inflate(layoutInflater, root, false) }
 ) {
+
+    itemView.setOnClickListener {
+        onDoseClick.invoke()
+    }
 
     bind {
         with(binding) {

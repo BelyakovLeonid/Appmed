@@ -21,4 +21,9 @@ fun searchAD(
         }
         return@OnEditorActionListener false
     })
+
+    binding.imageSearch.setOnClickListener {
+        onSearchQuery.invoke(binding.edit.text.toString())
+        itemView.hideKeyBoard()
+    }
 }
