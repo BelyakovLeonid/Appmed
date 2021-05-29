@@ -1,7 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:background="@drawable/button_ripple"
+    android:elevation="@dimen/base_elevation">
 
+    <ImageView
+        android:id="@+id/imageMg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/ic_meds"
+        app:layout_constraintEnd_toStartOf="@id/imageAlert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/orange" />
+
+    <TextView
+        android:id="@+id/textMg"
+        style="@style/HeaderLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@id/imageMg"
+        app:layout_constraintStart_toStartOf="@id/imageMg"
+        app:layout_constraintTop_toBottomOf="@id/imageMg" />
+
+    <ImageView
+        android:id="@+id/imageAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/ic_alert"
+        app:layout_constraintEnd_toStartOf="@id/imageDays"
+        app:layout_constraintStart_toEndOf="@id/imageMg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/orange" />
+
+    <TextView
+        android:id="@+id/textAlert"
+        style="@style/HeaderLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@id/imageAlert"
+        app:layout_constraintStart_toStartOf="@id/imageAlert"
+        app:layout_constraintTop_toBottomOf="@id/imageAlert" />
+
+    <ImageView
+        android:id="@+id/imageDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/ic_calendar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageAlert"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/orange" />
+
+    <TextView
+        android:id="@+id/textDays"
+        style="@style/HeaderLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@id/imageDays"
+        app:layout_constraintStart_toStartOf="@id/imageDays"
+        app:layout_constraintTop_toBottomOf="@id/imageDays" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonDoze"
+        style="@style/OutlineButton"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/dose_open"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textAlert"
+        app:strokeColor="@color/orange" />
 </androidx.constraintlayout.widget.ConstraintLayout>

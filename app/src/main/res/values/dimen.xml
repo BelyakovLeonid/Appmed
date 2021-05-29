@@ -4,4 +4,5 @@
     <dimen name="base_advice_height">150dp</dimen>
     <dimen name="base_advertisement_height">180dp</dimen>
     <dimen name="base_advertisement_width">110dp</dimen>
+    <dimen name="base_dose_height">160dp</dimen>
 </resources>

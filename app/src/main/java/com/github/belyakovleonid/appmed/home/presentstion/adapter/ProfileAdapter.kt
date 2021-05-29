@@ -5,6 +5,7 @@ import com.github.belyakovleonid.appmed.base.presentation.adapter.emptyFallbackA
 import com.github.belyakovleonid.appmed.home.presentstion.components.advertisment.adapter.advertisementsAD
 import com.github.belyakovleonid.appmed.home.presentstion.components.advices.adapter.alertAdvicesAD
 import com.github.belyakovleonid.appmed.home.presentstion.components.advices.adapter.normalAdvicesAD
+import com.github.belyakovleonid.appmed.home.presentstion.components.dosage.adapter.dosageAD
 import com.github.belyakovleonid.appmed.home.presentstion.components.search.adapter.searchAD
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import kotlin.jvm.internal.Intrinsics
@@ -21,6 +22,7 @@ class ProfileAdapter(
             .addDelegate(alertAdvicesAD())
             .addDelegate(searchAD())
             .addDelegate(advertisementsAD())
+            .addDelegate(dosageAD())
 //            .addDelegate(targetImageAD())
 //            .addDelegate(targetTextAD(onTextControlClick))
 //            .addDelegate(targetDatesAD())

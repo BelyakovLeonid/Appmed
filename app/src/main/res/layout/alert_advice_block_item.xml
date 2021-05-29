@@ -37,7 +37,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonYes"
-            style="@style/MyButton"
+            style="@style/OutlineButton"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -49,7 +49,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonNo"
-            style="@style/MyButton"
+            style="@style/OutlineButton"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:text="@string/no"
@@ -100,7 +100,7 @@
             style="@style/SubtitleText"
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:text="@string/doctors_name"
+            android:text="@string/alert_doctors"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

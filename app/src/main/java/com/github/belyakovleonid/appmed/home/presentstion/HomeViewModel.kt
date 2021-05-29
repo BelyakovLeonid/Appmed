@@ -4,7 +4,6 @@ import androidx.lifecycle.viewModelScope
 import com.github.belyakovleonid.appmed.base.presentation.components.BaseComponentViewModel
 import com.github.belyakovleonid.appmed.home.presentstion.components.advertisment.AdvertisementsComponent
 import com.github.belyakovleonid.appmed.home.presentstion.components.advices.AdvicesComponent
-import com.github.belyakovleonid.appmed.home.presentstion.components.chip.ChipComponent
 import com.github.belyakovleonid.appmed.home.presentstion.components.dosage.DosageComponent
 import com.github.belyakovleonid.appmed.home.presentstion.components.products.ProductsComponent
 import com.github.belyakovleonid.appmed.home.presentstion.components.search.SearchComponent
@@ -15,7 +14,6 @@ class HomeViewModel @Inject constructor(
     advicesComponent: AdvicesComponent,
     searchComponent: SearchComponent,
     advertisementsComponent: AdvertisementsComponent,
-    chipComponent: ChipComponent,
     dosageComponent: DosageComponent,
     productsComponent: ProductsComponent,
 ) : BaseComponentViewModel(
@@ -23,7 +21,6 @@ class HomeViewModel @Inject constructor(
         advicesComponent,
         searchComponent,
         advertisementsComponent,
-        chipComponent,
         dosageComponent,
         productsComponent
     )
