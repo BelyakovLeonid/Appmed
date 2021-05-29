@@ -11,4 +11,7 @@
     <color name="gray">#EEEEEE</color>
     <color name="ripple_active">#E0E0E0</color>
     <color name="orange">#FF9600</color>
+    <color name="blue">#0091FF</color>
+    <color name="pink">#F53AE3</color>
+    <color name="link_color">#4DE8C3</color>
 </resources>

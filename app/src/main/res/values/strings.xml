@@ -17,7 +17,6 @@
 
     <string name="dose_open">Уточнить дозировку</string>
     <string name="dose_mg">%1$d мг</string>
-
     <plurals name="dose_count">
         <item quantity="zero">%1$d раз</item>
         <item quantity="one">%1$d раз</item>
@@ -26,7 +25,6 @@
         <item quantity="many">%1$d раз</item>
         <item quantity="other">%1$d раз</item>
     </plurals>
-
     <plurals name="dose_days">
         <item quantity="zero">%1$d дней</item>
         <item quantity="one">%1$d день</item>
@@ -35,4 +33,8 @@
         <item quantity="many">%1$d дней</item>
         <item quantity="other">%1$d дней</item>
     </plurals>
+
+    <string name="product_availability">В наличии</string>
+    <string name="product_recipe">По рецепту</string>
+
 </resources>

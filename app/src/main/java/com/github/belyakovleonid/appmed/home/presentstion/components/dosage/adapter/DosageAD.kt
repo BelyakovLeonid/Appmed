@@ -19,6 +19,5 @@ fun dosageAD() = adapterDelegateViewBinding<DosageUiModel, Any, DosageItemBindin
                 R.plurals.dose_days, item.days, item.days
             )
         }
-
     }
 }

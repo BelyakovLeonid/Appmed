@@ -58,7 +58,7 @@
 
         <TextView
             android:id="@+id/doctor_title"
-            style="@style/SubtitleText"
+            style="@style/TinyTextLight"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:text="@string/doctors_name"

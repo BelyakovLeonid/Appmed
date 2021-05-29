@@ -23,7 +23,17 @@
         <item name="android:textColor">@color/text_secondary</item>
     </style>
 
-    <style name="SubtitleText">
+    <style name="NormalTextLight">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="SmallTextLight">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TinyTextLight">
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/text_secondary</item>
     </style>
