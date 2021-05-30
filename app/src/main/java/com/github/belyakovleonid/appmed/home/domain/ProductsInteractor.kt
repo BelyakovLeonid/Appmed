@@ -1,6 +1,7 @@
 package com.github.belyakovleonid.appmed.home.domain
 
 import android.util.Log
+import com.github.belyakovleonid.appmed.home.data.remote.ProductsApiMocked
 import com.github.belyakovleonid.appmed.home.domain.model.DrugScheme
 import com.github.belyakovleonid.appmed.home.domain.model.Product
 import com.github.belyakovleonid.appmed.profile.domain.ProfileInteractor
@@ -16,6 +17,8 @@ class ProductsInteractor @Inject constructor(
     private val profileInteractor: ProfileInteractor,
     private val repository: ProductsRepository
 ) {
+    // нужен для хака функционала персональных направлений
+    private var savedQueryBeforeDummy: String? = null
 
     private val searchedProducts = MutableStateFlow<List<Product>?>(null)
     private val searchedQuery = MutableStateFlow<String?>(null)
@@ -24,14 +27,13 @@ class ProductsInteractor @Inject constructor(
         searchedQuery,
         profileInteractor.subscribeToProfileData()
     ){ query, profile ->
-        Log.d("MyTag", "loadDefaultSchemeByQueryAndProfile = ${repository.loadDefaultSchemeByQueryAndProfile(query, profile)}")
         repository.loadDefaultSchemeByQueryAndProfile(query, profile)
 
     }
 
-    fun setSearchQuery(query: String) {
+    fun setSearchQuery(query: String?) {
         searchedQuery.value = query
-        searchedProducts.tryEmit(repository.getProductsByQuery(query))
+        searchedProducts.tryEmit(repository.getProductsByQuery(query ?: ""))
     }
 
     fun subscribeToSearchedProducts(): Flow<List<Product>?> {
@@ -44,10 +46,20 @@ class ProductsInteractor @Inject constructor(
     }
 
     fun getCurrentProduct(): Product? {
-        return searchedProducts.value?.first()
+        return searchedProducts.value?.firstOrNull()
     }
 
     fun subscribeToScheme(): Flow<DrugScheme> {
         return drugScheme.filterNotNull()
+    }
+
+    fun setDummyData() {
+        savedQueryBeforeDummy = searchedQuery.value
+        setSearchQuery(ProductsApiMocked.HARDCODED_QUERY_1)
+    }
+
+    fun removeDummyData() {
+        setSearchQuery(savedQueryBeforeDummy)
+        savedQueryBeforeDummy = null
     }
 }

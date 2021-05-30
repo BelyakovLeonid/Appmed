@@ -1,4 +1,4 @@
-package com.github.belyakovleonid.appmed.home.presentstion
+package com.github.belyakovleonid.appmed.directions
 
 import android.os.Bundle
 import android.view.View
@@ -10,25 +10,24 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.belyakovleonid.appmed.R
 import com.github.belyakovleonid.appmed.base.MedApp
 import com.github.belyakovleonid.appmed.base.presentation.utils.observeFlow
-import com.github.belyakovleonid.appmed.databinding.FragmentHomeBinding
-import com.github.belyakovleonid.appmed.home.presentstion.adapter.HomeAdapter
+import com.github.belyakovleonid.appmed.databinding.FragmentDoseBinding
+import com.github.belyakovleonid.appmed.dose.presentation.adapter.DoseAdapter
 import javax.inject.Inject
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class DirectionsFragment : Fragment(R.layout.fragment_dose) {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    private val viewModel by viewModels<HomeViewModel> { viewModelFactory }
+    private val viewModel by viewModels<DirectionsViewModel> { viewModelFactory }
 
-    private val binding by viewBinding(FragmentHomeBinding::bind)
+    private val binding by viewBinding(FragmentDoseBinding::bind)
 
-    private val profileAdapter by lazy(LazyThreadSafetyMode.NONE) {
-        HomeAdapter(
-            onSearchQuery = viewModel::onSearchQuery,
+    private val doseAdapter by lazy(LazyThreadSafetyMode.NONE) {
+        DoseAdapter(
+            onAddProfileClick = ::onAddProfileClick,
             onInfoClick = ::onInfoClick,
-            onDirectionsClick = ::onDirectionsClick,
-            onDoseClick = ::onDoseClick
+            onSaveClick = ::onSaveClick
         )
     }
 
@@ -40,18 +39,18 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.contentList.adapter = profileAdapter
+        binding.contentList.adapter = doseAdapter
         observeFlow(viewModel.content) {
-            profileAdapter.items = it
+            doseAdapter.items = it
         }
     }
 
-    private fun onDoseClick() {
-        requireActivity().findNavController(R.id.activityContent).navigate(R.id.doseFragment)
+    private fun onAddProfileClick() {
+        requireActivity().findNavController(R.id.activityContent).navigate(R.id.profileFragment)
     }
 
-    private fun onDirectionsClick() {
-        requireActivity().findNavController(R.id.activityContent).navigate(R.id.directionsFragment)
+    private fun onSaveClick() {
+        requireActivity().findNavController(R.id.activityContent).navigateUp()
     }
 
     private fun onInfoClick() {

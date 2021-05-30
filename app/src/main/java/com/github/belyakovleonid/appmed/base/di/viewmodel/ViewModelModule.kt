@@ -1,6 +1,7 @@
 package com.github.belyakovleonid.appmed.base.di.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.github.belyakovleonid.appmed.directions.DirectionsViewModel
 import com.github.belyakovleonid.appmed.dose.presentation.DoseViewModel
 import com.github.belyakovleonid.appmed.home.presentstion.HomeViewModel
 import com.github.belyakovleonid.appmed.profile.presentstion.ProfileViewModel
@@ -15,6 +16,11 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(ProfileViewModel::class)
     fun bindProfileViewModel(viewModel: ProfileViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(DirectionsViewModel::class)
+    fun bindDirectionsViewModel(viewModel: DirectionsViewModel): ViewModel
 
     @Binds
     @IntoMap

@@ -39,10 +39,4 @@ class HomeViewModel @Inject constructor(
             initComponents()
         }
     }
-
-    fun prepareToOpenDirections() {
-        productsInteractor.setSearchQuery(
-            ProductsApiMocked.HARDCODED_QUERY_1  //dirty hack just to show the idea
-        )
-    }
 }

@@ -23,4 +23,8 @@
         android:id="@+id/infoFragment"
         android:name="com.github.belyakovleonid.appmed.info.presentation.InfoFragment"
         android:label="InfoFragment" />
+    <fragment
+        android:id="@+id/directionsFragment"
+        android:name="com.github.belyakovleonid.appmed.directions.DirectionsFragment"
+        android:label="DirectionsFragment" />
 </navigation>

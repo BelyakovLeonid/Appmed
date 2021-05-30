@@ -9,6 +9,8 @@ import javax.inject.Singleton
 @Singleton
 class ProfileInteractor @Inject constructor() {
 
+    private var profileDataBeforeDummy: ProfileData? = null
+
     private val profileData = MutableStateFlow<ProfileData?>(null)
 
     fun subscribeToProfileData(): Flow<ProfileData?> {
@@ -19,7 +21,17 @@ class ProfileInteractor @Inject constructor() {
         return profileData.value
     }
 
-    suspend fun saveProfileData(data: ProfileData) {
+    fun saveProfileData(data: ProfileData?) {
         profileData.value = data
+    }
+
+    fun setDummyData() {
+        profileDataBeforeDummy = profileData.value
+        saveProfileData(ProfileData("Стелла", "35", "М", false))
+    }
+
+    fun removeDummyData() {
+        saveProfileData(profileDataBeforeDummy)
+        profileDataBeforeDummy = null
     }
 }
