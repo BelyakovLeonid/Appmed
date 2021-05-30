@@ -5,7 +5,8 @@ import com.github.belyakovleonid.appmed.base.presentation.adapter.emptyFallbackA
 import com.github.belyakovleonid.appmed.dose.presentation.components.advice.adapter.doseAdviceAD
 import com.github.belyakovleonid.appmed.dose.presentation.components.advice.model.DoseAdviceUiModel
 import com.github.belyakovleonid.appmed.dose.presentation.components.controls.adapter.controlsAD
-import com.github.belyakovleonid.appmed.dose.presentation.components.controls.model.ControlsUiModel
+import com.github.belyakovleonid.appmed.dose.presentation.components.controls.adapter.controlsSaveAD
+import com.github.belyakovleonid.appmed.dose.presentation.components.controls.model.ControlsSaveUiModel
 import com.github.belyakovleonid.appmed.dose.presentation.components.dose.adapter.doseAD
 import com.github.belyakovleonid.appmed.dose.presentation.components.product.adapter.doseProductAD
 import com.github.belyakovleonid.appmed.dose.presentation.components.profile.adapter.emptyProfileAD
@@ -29,6 +30,7 @@ class DoseAdapter(
             .addDelegate(doseAD())
             .addDelegate(doseAdviceAD())
             .addDelegate(controlsAD(onSaveClick))
+            .addDelegate(controlsSaveAD(onSaveClick))
     }
 
     private companion object DiffCallback : DiffUtil.ItemCallback<Any>() {
@@ -42,7 +44,7 @@ class DoseAdapter(
             return when {
                 oldItem is EmptyProfileUiModel && newItem is EmptyProfileUiModel -> true
                 oldItem is DoseAdviceUiModel && newItem is DoseAdviceUiModel -> true
-                oldItem is ControlsUiModel && newItem is ControlsUiModel -> true
+                oldItem is ControlsSaveUiModel && newItem is ControlsSaveUiModel -> true
                 else -> Intrinsics.areEqual(oldItem, newItem)
             }
         }

@@ -12,6 +12,7 @@ import com.github.belyakovleonid.appmed.R
 import com.github.belyakovleonid.appmed.base.MedApp
 import com.github.belyakovleonid.appmed.base.presentation.utils.observeFlow
 import com.github.belyakovleonid.appmed.databinding.FragmentProfileBinding
+import com.github.belyakovleonid.appmed.profile.domain.model.ProfileData
 import javax.inject.Inject
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
@@ -31,9 +32,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonSave.setOnClickListener {
-            requireActivity().findNavController(R.id.activityContent).navigateUp()
-        }
+        setupView()
         observeFlow(viewModel.content) { item ->
             with(binding) {
                 alertGroup.isVisible = item.showProductAlert
@@ -44,6 +43,20 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                     item.productAllergen
                 )
             }
+        }
+    }
+
+    private fun setupView() = with(binding) {
+        buttonSave.setOnClickListener {
+            viewModel.saveDataBeforeExit(
+                ProfileData(
+                    name = editName.text.toString(),
+                    age = editAge.toString(),
+                    sex = editSex.text.toString(),
+                    isPregnant = pregnantSwitch.isChecked
+                )
+            )
+            requireActivity().findNavController(R.id.activityContent).navigateUp()
         }
     }
 }

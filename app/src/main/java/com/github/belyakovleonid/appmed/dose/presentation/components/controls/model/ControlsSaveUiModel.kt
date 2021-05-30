@@ -2,4 +2,4 @@ package com.github.belyakovleonid.appmed.dose.presentation.components.controls.m
 
 import androidx.annotation.StringRes
 
-class ControlsUiModel
+class ControlsSaveUiModel
