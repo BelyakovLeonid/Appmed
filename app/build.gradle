@@ -57,6 +57,9 @@ dependencies {
     //ViewBindingDelegate
     implementation 'com.kirich1409.viewbindingpropertydelegate:vbpd-noreflection:1.4.1'
 
+    // Coil
+    implementation "io.coil-kt:coil:1.1.1"
+
     // AdapterDelegate
     implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.0'
     implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.0'
