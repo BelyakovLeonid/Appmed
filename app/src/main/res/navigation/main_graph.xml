@@ -12,5 +12,5 @@
     <fragment
         android:id="@+id/doseFragment"
         android:name="com.github.belyakovleonid.appmed.dose.presentation.DoseFragment"
-        android:label="DoseFragment" />
+        android:label="DoseFragment"/>
 </navigation>

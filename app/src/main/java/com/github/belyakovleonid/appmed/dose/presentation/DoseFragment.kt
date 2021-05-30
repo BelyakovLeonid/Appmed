@@ -1,6 +1,7 @@
 package com.github.belyakovleonid.appmed.dose.presentation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -11,6 +12,7 @@ import com.github.belyakovleonid.appmed.base.MedApp
 import com.github.belyakovleonid.appmed.base.presentation.utils.observeFlow
 import com.github.belyakovleonid.appmed.databinding.FragmentDoseBinding
 import com.github.belyakovleonid.appmed.dose.presentation.adapter.DoseAdapter
+import com.github.belyakovleonid.appmed.home.domain.model.Product
 import javax.inject.Inject
 
 class DoseFragment : Fragment(R.layout.fragment_dose) {
@@ -31,8 +33,6 @@ class DoseFragment : Fragment(R.layout.fragment_dose) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         (requireActivity().application as MedApp).appComponent
-            .doseComponent()
-            .create()
             .inject(this)
     }
 

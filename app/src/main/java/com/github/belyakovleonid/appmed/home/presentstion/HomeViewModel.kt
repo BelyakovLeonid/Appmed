@@ -2,6 +2,8 @@ package com.github.belyakovleonid.appmed.home.presentstion
 
 import androidx.lifecycle.viewModelScope
 import com.github.belyakovleonid.appmed.base.presentation.components.BaseComponentViewModel
+import com.github.belyakovleonid.appmed.home.domain.ProductsInteractor
+import com.github.belyakovleonid.appmed.home.domain.model.Product
 import com.github.belyakovleonid.appmed.home.presentstion.components.advertisment.AdvertisementsComponent
 import com.github.belyakovleonid.appmed.home.presentstion.components.advices.AdvicesComponent
 import com.github.belyakovleonid.appmed.home.presentstion.components.dosage.DosageComponent
@@ -12,6 +14,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(
+    private val productsInteractor: ProductsInteractor,
     advicesComponent: AdvicesComponent,
     searchComponent: SearchComponent,
     advertisementsComponent: AdvertisementsComponent,
