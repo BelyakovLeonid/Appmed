@@ -14,6 +14,9 @@ fun dosageAD(
     itemView.setOnClickListener {
         onDoseClick.invoke()
     }
+    binding.buttonDoze.setOnClickListener {
+        onDoseClick.invoke()
+    }
 
     bind {
         with(binding) {

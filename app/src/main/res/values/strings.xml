@@ -38,6 +38,18 @@
     <string name="product_recipe">По рецепту</string>
     <string name="product_title">%1s, %2s</string>
     <string name="product_currency">%1d ₽</string>
+
     <string name="dose_profile_who">Кто будет принимать?</string>
     <string name="dose_product_recipe">Только по рецепту</string>
+    <string name="dose_i_have_recipe">У меня есть рецепт</string>
+    <string name="dose_get_direction">Получить назначение врача</string>
+    <string name="dose_why_antibio">Почему самому нельзя подобрать антибиотик?</string>
+    <string name="dose">Дозировка</string>
+    <string name="freq">Частота</string>
+    <string name="course">Курс</string>
+
+    <string name="dose_subscr">Подписка</string>
+    <string name="dose_reminders">Вкл. напоминания приема</string>
+    <string name="dose_save">Сохранить</string>
+
 </resources>

@@ -4,7 +4,7 @@ import com.github.belyakovleonid.appmed.base.presentation.components.BaseCompone
 import com.github.belyakovleonid.appmed.dose.presentation.components.profile.model.EmptyProfileUiModel
 import javax.inject.Inject
 
-class ProfileComponent @Inject constructor() : BaseComponent() {
+class DoseProfileComponent @Inject constructor() : BaseComponent() {
 
     override suspend fun onInitialize() {
         setContent(EmptyProfileUiModel())

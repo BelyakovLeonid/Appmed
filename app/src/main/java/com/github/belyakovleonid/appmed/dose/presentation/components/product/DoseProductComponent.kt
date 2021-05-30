@@ -5,7 +5,7 @@ import com.github.belyakovleonid.appmed.dose.presentation.components.product.mod
 import com.github.belyakovleonid.appmed.home.domain.ProductsInteractor
 import javax.inject.Inject
 
-class ProductComponent @Inject constructor(
+class DoseProductComponent @Inject constructor(
     private val interactor: ProductsInteractor
 ) : BaseComponent() {
 

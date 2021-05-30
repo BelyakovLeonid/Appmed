@@ -12,7 +12,6 @@ import com.github.belyakovleonid.appmed.base.MedApp
 import com.github.belyakovleonid.appmed.base.presentation.utils.observeFlow
 import com.github.belyakovleonid.appmed.databinding.FragmentDoseBinding
 import com.github.belyakovleonid.appmed.dose.presentation.adapter.DoseAdapter
-import com.github.belyakovleonid.appmed.home.domain.model.Product
 import javax.inject.Inject
 
 class DoseFragment : Fragment(R.layout.fragment_dose) {
@@ -26,7 +25,8 @@ class DoseFragment : Fragment(R.layout.fragment_dose) {
 
     private val doseAdapter by lazy(LazyThreadSafetyMode.NONE) {
         DoseAdapter(
-            onAddProfileClick = ::onAddProfileClick
+            onAddProfileClick = ::onAddProfileClick,
+            onSaveClick = ::onSaveClick
         )
     }
 
@@ -45,6 +45,10 @@ class DoseFragment : Fragment(R.layout.fragment_dose) {
     }
 
     private fun onAddProfileClick() {
+
+    }
+
+    private fun onSaveClick() {
 
     }
 }
