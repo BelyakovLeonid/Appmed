@@ -9,8 +9,4 @@ import com.github.belyakovleonid.appmed.databinding.FragmentProfileBinding
 class FavoriteFragment: Fragment(R.layout.fragment_favorite) {
 
     private val binding by viewBinding(FragmentFavoriteBinding::bind)
-
-    companion object {
-        const val TAB_TAG = "FavoriteFragment"
-    }
 }
