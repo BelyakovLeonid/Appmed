@@ -26,6 +26,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val profileAdapter by lazy(LazyThreadSafetyMode.NONE) {
         HomeAdapter(
             onSearchQuery = viewModel::onSearchQuery,
+            onInfoClick = ::onInfoClick,
             onDirectionsClick = ::onDirectionsClick,
             onDoseClick = ::onDoseClick
         )
@@ -52,5 +53,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun onDirectionsClick() {
         viewModel.prepareToOpenDirections()
         requireActivity().findNavController(R.id.activityContent).navigate(R.id.doseFragment)
+    }
+
+    private fun onInfoClick() {
+        requireActivity().findNavController(R.id.activityContent).navigate(R.id.infoFragment)
     }
 }

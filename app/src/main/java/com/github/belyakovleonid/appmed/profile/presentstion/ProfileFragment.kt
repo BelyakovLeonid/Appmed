@@ -58,5 +58,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             )
             requireActivity().findNavController(R.id.activityContent).navigateUp()
         }
+        doctorsItem.setOnClickListener {
+            requireActivity().findNavController(R.id.activityContent).navigate(R.id.infoFragment)
+        }
     }
 }

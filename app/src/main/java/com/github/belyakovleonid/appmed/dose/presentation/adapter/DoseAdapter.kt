@@ -17,6 +17,7 @@ import kotlin.jvm.internal.Intrinsics
 
 class DoseAdapter(
     onAddProfileClick: () -> Unit,
+    onInfoClick: () -> Unit,
     onSaveClick: () -> Unit
 ) : AsyncListDifferDelegationAdapter<Any>(DiffCallback) {
 
@@ -25,10 +26,9 @@ class DoseAdapter(
             .setFallbackDelegate(emptyFallbackAD())
             .addDelegate(emptyProfileAD(onAddProfileClick))
             .addDelegate(profileAD(onAddProfileClick))
-            .addDelegate(profileAD(onAddProfileClick))
             .addDelegate(doseProductAD())
             .addDelegate(doseAD())
-            .addDelegate(doseAdviceAD())
+            .addDelegate(doseAdviceAD(onInfoClick))
             .addDelegate(controlsAD(onSaveClick))
             .addDelegate(controlsSaveAD(onSaveClick))
     }

@@ -26,6 +26,7 @@ class DoseFragment : Fragment(R.layout.fragment_dose) {
     private val doseAdapter by lazy(LazyThreadSafetyMode.NONE) {
         DoseAdapter(
             onAddProfileClick = ::onAddProfileClick,
+            onInfoClick = ::onInfoClick,
             onSaveClick = ::onSaveClick
         )
     }
@@ -50,5 +51,9 @@ class DoseFragment : Fragment(R.layout.fragment_dose) {
 
     private fun onSaveClick() {
         requireActivity().findNavController(R.id.activityContent).navigateUp()
+    }
+
+    private fun onInfoClick() {
+        requireActivity().findNavController(R.id.activityContent).navigate(R.id.infoFragment)
     }
 }
