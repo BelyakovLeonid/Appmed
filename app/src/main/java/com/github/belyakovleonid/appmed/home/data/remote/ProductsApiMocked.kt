@@ -2,6 +2,8 @@ package com.github.belyakovleonid.appmed.home.data.remote
 
 import com.github.belyakovleonid.appmed.R
 import com.github.belyakovleonid.appmed.home.data.remote.model.ProductDto
+import com.github.belyakovleonid.appmed.home.domain.model.DrugScheme
+import com.github.belyakovleonid.appmed.profile.domain.model.ProfileData
 import java.util.Locale
 import javax.inject.Inject
 
@@ -9,6 +11,21 @@ import javax.inject.Inject
  * Фейковые данные якобы от бэка
  */
 class ProductsApiMocked @Inject constructor() : ProductsApi {
+
+    override fun loadDefaultSchemeByQueryAndProfile(query: String?, profile: ProfileData?): DrugScheme? {
+        return when {
+            profile == null && query == HARDCODED_QUERY_1 -> {
+                DrugScheme(HARDCODED_QUERY_1, 500, 3, 5)
+            }
+            profile != null && query == HARDCODED_QUERY_1 -> {
+                DrugScheme(HARDCODED_QUERY_1, 875, 3, 5)
+            }
+            profile == null && query == HARDCODED_QUERY_2 -> {
+                DrugScheme(HARDCODED_QUERY_2, 200, 3, 5)
+            }
+            else -> null
+        }
+    }
 
     override fun loadProductsByQuery(query: String) = when (query.lowercase(Locale.getDefault())) {
         HARDCODED_QUERY_1 -> {
@@ -25,7 +42,7 @@ class ProductsApiMocked @Inject constructor() : ProductsApi {
                     newPrice = 155,
                     isAvailable = true,
                     isRecipe = true,
-                    defaultPortionMg = 500,
+                    defaultPortionMg = 875,
                     defaultCountPerDay = 3,
                     defaultCourseDays = 5,
                 ),
@@ -33,7 +50,7 @@ class ProductsApiMocked @Inject constructor() : ProductsApi {
                     id = 2L,
                     rate = 4.88f,
                     name = "Амоксиклав",
-                    dose = "порошок 125мг, 31мл.",
+                    dose = "порошок 625мг, 31шт.",
                     allergens = listOf("Пеницилин"),
                     description = "Порошок для приема внутрь",
                     imageResId = R.drawable.img_aug_3,
@@ -41,7 +58,7 @@ class ProductsApiMocked @Inject constructor() : ProductsApi {
                     newPrice = 185,
                     isAvailable = false,
                     isRecipe = true,
-                    defaultPortionMg = 500,
+                    defaultPortionMg = 625,
                     defaultCountPerDay = 3,
                     defaultCourseDays = 5,
                 ),

@@ -1,5 +1,6 @@
 package com.github.belyakovleonid.appmed.home.presentstion.components.dosage
 
+import android.util.Log
 import com.github.belyakovleonid.appmed.base.presentation.components.BaseComponent
 import com.github.belyakovleonid.appmed.home.domain.ProductsInteractor
 import com.github.belyakovleonid.appmed.home.presentstion.components.dosage.model.DosageUiModel
@@ -16,22 +17,28 @@ class DosageComponent @Inject constructor(
 ) : BaseComponent() {
 
     override fun onSubscribe() {
-        productsInteractor.subscribeToSearchedProducts()
-            .combine(profileInteractor.subscribeToProfileData()) { products, profileData ->
-                val firstProduct = products?.firstOrNull()
-                if (profileData == null) firstProduct else null
-            }.onEach { firstProduct ->
-                if (firstProduct != null) {
-                    setContent(
-                        DosageUiModel(
-                            mg = firstProduct.defaultPortionMg,
-                            alertCount = firstProduct.defaultCountPerDay,
-                            days = firstProduct.defaultCourseDays
-                        )
+        combine(
+            productsInteractor.subscribeToSearchedProducts(),
+            profileInteractor.subscribeToProfileData(),
+            productsInteractor.subscribeToScheme()
+        ) { products, profileData, scheme ->
+            if (!products.isNullOrEmpty() && profileData == null) {
+                scheme
+            } else {
+                null
+            }
+        }.onEach { scheme ->
+            if (scheme != null) {
+                setContent(
+                    DosageUiModel(
+                        mg = scheme.defaultPortionMg,
+                        alertCount = scheme.defaultCountPerDay,
+                        days = scheme.defaultCourseDays
                     )
-                } else {
-                    content.value = emptyList()
-                }
-            }.launchIn(viewModelScope)
+                )
+            } else {
+                content.value = emptyList()
+            }
+        }.launchIn(viewModelScope)
     }
 }
