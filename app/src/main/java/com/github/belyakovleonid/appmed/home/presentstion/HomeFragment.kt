@@ -5,6 +5,8 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.belyakovleonid.appmed.R
 import com.github.belyakovleonid.appmed.base.MedApp
@@ -46,6 +48,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun onDoseClick() {
-
+        requireActivity().findNavController(R.id.activityContent).navigate(R.id.doseFragment)
     }
 }

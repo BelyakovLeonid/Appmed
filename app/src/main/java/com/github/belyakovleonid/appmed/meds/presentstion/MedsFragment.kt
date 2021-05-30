@@ -10,9 +10,4 @@ class MedsFragment: Fragment(R.layout.fragment_meds) {
 
 
     private val binding by viewBinding(FragmentMedsBinding::bind)
-
-
-    companion object {
-        const val TAB_TAG = "MedsFragment"
-    }
 }

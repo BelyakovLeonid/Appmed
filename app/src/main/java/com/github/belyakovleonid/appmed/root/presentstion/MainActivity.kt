@@ -1,22 +1,19 @@
 package com.github.belyakovleonid.appmed.root.presentstion
 
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
-import by.kirich1409.viewbindingdelegate.viewBinding
+import androidx.navigation.fragment.NavHostFragment
 import com.github.belyakovleonid.appmed.R
-import com.github.belyakovleonid.appmed.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
-    private val binding by viewBinding(ActivityMainBinding::bind)
+//    override fun onSupportNavigateUp() = findNavController(R.id.activityContent).navigateUp()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding.bottomNav.setupWithNavController(findNavController(R.id.contentContainer))
-        binding.bottomNav.setOnNavigationItemReselectedListener {
-            // Do nothing to ignore the reselection
-        }
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        Log.d("MyTag", "0 = ${findNavController(R.id.activityContent).hashCode()}")
+        super.onCreate(savedInstanceState, persistentState)
     }
 }
