@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:background="@drawable/button_ripple"
+    android:clickable="true"
+    android:elevation="@dimen/base_elevation">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/XLargeText"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/direction_take"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:singleSelection="true"
+        app:checkedButton="@id/button2"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button1"
+            android:checkable="true"
+            android:textAllCaps="false"
+            app:shapeAppearance="@style/Rounded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/direction_home"
+            app:strokeColor="@color/orange" />
+
+        <Button
+            android:id="@+id/button2"
+            android:textAllCaps="false"
+            android:checkable="true"
+            android:backgroundTint="@color/link_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/direction_home"
+            app:strokeColor="@color/orange" />
+
+        <Button
+            android:id="@+id/button3"
+            android:checkable="true"
+            android:textAllCaps="false"
+            app:shapeAppearance="@style/Rounded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/direction_home"
+            app:strokeColor="@color/orange" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonDoze"
+        style="@style/OutlineButton"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="30dp"
+        android:drawableStart="@drawable/ic_attachment"
+        android:text="@string/direction_i_have"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toggleView"
+        app:strokeColor="@color/orange" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,8 @@ import com.github.belyakovleonid.appmed.home.presentstion.components.advertismen
 import com.github.belyakovleonid.appmed.home.presentstion.components.advices.adapter.alertAdvicesAD
 import com.github.belyakovleonid.appmed.home.presentstion.components.advices.adapter.normalAdvicesAD
 import com.github.belyakovleonid.appmed.home.presentstion.components.advices.model.NormalAdvicesUiModel
+import com.github.belyakovleonid.appmed.home.presentstion.components.direction.adapter.directionAD
+import com.github.belyakovleonid.appmed.home.presentstion.components.direction.model.DirectionUiModel
 import com.github.belyakovleonid.appmed.home.presentstion.components.dosage.adapter.dosageAD
 import com.github.belyakovleonid.appmed.home.presentstion.components.products.adapter.productAD
 import com.github.belyakovleonid.appmed.home.presentstion.components.search.adapter.searchAD
@@ -28,6 +30,7 @@ class HomeAdapter(
             .addDelegate(advertisementsAD())
             .addDelegate(dosageAD(onDoseClick))
             .addDelegate(productAD())
+            .addDelegate(directionAD())
     }
 
     private companion object DiffCallback : DiffUtil.ItemCallback<Any>() {
@@ -37,10 +40,11 @@ class HomeAdapter(
         }
 
         override fun areContentsTheSame(oldItem: Any, newItem: Any): Boolean {
-            return when{
+            return when {
                 oldItem is AdvertisementsUiModel && newItem is AdvertisementsUiModel -> true
                 oldItem is NormalAdvicesUiModel && newItem is NormalAdvicesUiModel -> true
                 oldItem is SearchUiModel && newItem is SearchUiModel -> true
+                oldItem is DirectionUiModel && newItem is DirectionUiModel -> true
                 else -> Intrinsics.areEqual(oldItem, newItem)
             }
         }
