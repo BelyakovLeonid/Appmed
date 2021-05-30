@@ -1,6 +1,5 @@
 package com.github.belyakovleonid.appmed.dose.presentation.components.profile
 
-import android.util.Log
 import com.github.belyakovleonid.appmed.base.presentation.components.BaseComponent
 import com.github.belyakovleonid.appmed.dose.presentation.components.profile.model.DoseProfileUiModel
 import com.github.belyakovleonid.appmed.dose.presentation.components.profile.model.EmptyProfileUiModel
