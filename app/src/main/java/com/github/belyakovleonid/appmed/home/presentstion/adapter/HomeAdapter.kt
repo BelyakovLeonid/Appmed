@@ -18,13 +18,14 @@ import kotlin.jvm.internal.Intrinsics
 
 class HomeAdapter(
     onSearchQuery: (String) -> Unit,
+    onDirectionsClick: () -> Unit,
     onDoseClick: () -> Unit
 ) : AsyncListDifferDelegationAdapter<Any>(DiffCallback) {
 
     init {
         delegatesManager
             .setFallbackDelegate(emptyFallbackAD())
-            .addDelegate(normalAdvicesAD())
+            .addDelegate(normalAdvicesAD(onDirectionsClick))
             .addDelegate(alertAdvicesAD())
             .addDelegate(searchAD(onSearchQuery))
             .addDelegate(advertisementsAD())

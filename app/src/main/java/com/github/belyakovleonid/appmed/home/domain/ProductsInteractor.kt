@@ -24,4 +24,8 @@ class ProductsInteractor @Inject constructor(
     fun getCurrentProduct(): Product? {
         return searchedProducts.value?.first()
     }
+
+    fun getOptimized(): Product? {
+        return searchedProducts.value?.first()
+    }
 }

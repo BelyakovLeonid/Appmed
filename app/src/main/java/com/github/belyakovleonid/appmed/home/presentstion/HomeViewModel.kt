@@ -2,6 +2,7 @@ package com.github.belyakovleonid.appmed.home.presentstion
 
 import androidx.lifecycle.viewModelScope
 import com.github.belyakovleonid.appmed.base.presentation.components.BaseComponentViewModel
+import com.github.belyakovleonid.appmed.home.data.remote.ProductsApiMocked
 import com.github.belyakovleonid.appmed.home.domain.ProductsInteractor
 import com.github.belyakovleonid.appmed.home.domain.model.Product
 import com.github.belyakovleonid.appmed.home.presentstion.components.advertisment.AdvertisementsComponent
@@ -37,5 +38,11 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             initComponents()
         }
+    }
+
+    fun prepareToOpenDirections() {
+        productsInteractor.setSearchQuery(
+            ProductsApiMocked.HARDCODED_QUERY_1  //dirty hack just to show the idea
+        )
     }
 }

@@ -103,7 +103,7 @@ class ProductsApiMocked @Inject constructor() : ProductsApi {
     }
 
     companion object {
-        private const val HARDCODED_QUERY_1 = "амоксиклав"
-        private const val HARDCODED_QUERY_2 = "аскорбинка"
+        const val HARDCODED_QUERY_1 = "амоксиклав"
+        const val HARDCODED_QUERY_2 = "аскорбинка"
     }
 }
