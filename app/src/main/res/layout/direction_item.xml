@@ -40,7 +40,7 @@
             app:shapeAppearance="@style/Rounded"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/direction_home"
+            android:text="@string/direction_clinics"
             app:strokeColor="@color/orange" />
 
         <Button
@@ -50,7 +50,7 @@
             android:backgroundTint="@color/link_color"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/direction_home"
+            android:text="@string/direction_online"
             app:strokeColor="@color/orange" />
 
         <Button
