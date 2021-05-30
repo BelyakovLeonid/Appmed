@@ -23,6 +23,11 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="LargeText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="LargeTextLight">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/text_secondary</item>
@@ -58,9 +63,18 @@
         <item name="android:textColor">@color/text_secondary</item>
     </style>
 
+    <style name="FilledButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:backgroundTint">@color/link_color</item>
+        <item name="rippleColor">@color/ripple_active</item>
+        <item name="shapeAppearanceOverlay">@style/MyShapeAppearance</item>
+    </style>
+
     <style name="OutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:textColor">@color/black</item>
         <item name="android:minWidth">0dp</item>
+        <item name="android:textAllCaps">false</item>
         <item name="rippleColor">@color/ripple_active</item>
         <item name="shapeAppearanceOverlay">@style/MyShapeAppearance</item>
     </style>

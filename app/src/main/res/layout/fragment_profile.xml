@@ -1,8 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/contentList"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingVertical="16dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="@string/profile_insert_name"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textCursorDrawable="@null"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/image"
+        app:layout_constraintStart_toStartOf="@id/image"
+        app:layout_constraintTop_toBottomOf="@id/image" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/alertItem"
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_ripple"
+        android:clickable="true"
+        android:elevation="@dimen/base_elevation"
+        android:minHeight="@dimen/base_advice_height"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/doctorsItem"
+        app:layout_constraintEnd_toStartOf="@id/doctorsItem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editName">
+
+        <TextView
+            android:id="@+id/alertTitle"
+            style="@style/HeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonYes"
+            style="@style/OutlineButton"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/yes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/buttonNo"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonNo"
+            style="@style/OutlineButton"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:text="@string/no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/buttonYes" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/doctorsItem"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_ripple"
+        android:clickable="true"
+        android:elevation="@dimen/base_elevation"
+        android:minHeight="@dimen/base_advice_height"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/alertItem"
+        app:layout_constraintTop_toBottomOf="@id/editName">
+
+        <TextView
+            android:id="@+id/doctorsTitle"
+            style="@style/HeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_drug_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageView
+            android:id="@+id/doctorImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/image_doctor"
+            app:layout_constraintBottom_toTopOf="@id/doctorTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/doctorsTitle"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/doctorTitle"
+            style="@style/TinyTextLight"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_doctors"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="RtlHardcoded" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/alertGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="alertItem, doctorsItem" />
+
+    <TextView
+        android:id="@+id/ageTitle"
+        style="@style/LargeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/profile_age"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/doctorsItem" />
+
+    <EditText
+        android:id="@+id/editAge"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:hint="@string/profile_age_hint"
+        android:imeOptions="actionNext"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:textCursorDrawable="@null"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ageTitle" />
+
+    <TextView
+        android:id="@+id/sexTitle"
+        style="@style/LargeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/profile_sex"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editAge" />
+
+    <EditText
+        android:id="@+id/editSex"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:hint="@string/profile_sex_hint"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLength="1"
+        android:digits="мМжЖ"
+        android:textCursorDrawable="@null"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sexTitle" />
+
+    <TextView
+        android:id="@+id/pregnantTitle"
+        style="@style/LargeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/profile_pregnant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editSex" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/pregnantSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/pregnantTitle"
+        app:layout_constraintStart_toEndOf="@id/pregnantTitle"
+        app:layout_constraintTop_toTopOf="@id/pregnantTitle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSave"
+        style="@style/FilledButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/profile_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pregnantTitle"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

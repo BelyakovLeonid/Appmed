@@ -52,4 +52,12 @@
     <string name="dose_reminders">Вкл. напоминания приема</string>
     <string name="dose_save">Сохранить</string>
 
+
+    <string name="profile_insert_name">Введите имя</string>
+    <string name="profile_age">Возраст</string>
+    <string name="profile_sex">Пол</string>
+    <string name="profile_pregnant">Беременность</string>
+    <string name="profile_age_hint">40</string>
+    <string name="profile_sex_hint">Ж</string>
+    <string name="profile_save">Подобрать</string>
 </resources>

@@ -13,6 +13,6 @@ fun controlsAD(
 ) {
 
     binding.button.setOnClickListener {
-
+        onButtonCLick.invoke()
     }
 }

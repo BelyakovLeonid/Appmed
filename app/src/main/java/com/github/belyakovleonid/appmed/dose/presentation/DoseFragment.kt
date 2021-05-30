@@ -1,11 +1,11 @@
 package com.github.belyakovleonid.appmed.dose.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.belyakovleonid.appmed.R
 import com.github.belyakovleonid.appmed.base.MedApp
@@ -45,10 +45,10 @@ class DoseFragment : Fragment(R.layout.fragment_dose) {
     }
 
     private fun onAddProfileClick() {
-
+        requireActivity().findNavController(R.id.activityContent).navigate(R.id.profileFragment)
     }
 
     private fun onSaveClick() {
-
+        requireActivity().findNavController(R.id.activityContent).navigateUp()
     }
 }
